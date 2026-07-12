@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>FPGA Calculator Project</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Massively CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+
+    
+    <header class="major" style="text-align:center; padding:4rem 2rem; background:#bc5511;">
+        <h1 style="color:white; text-shadow:0 2px 6px rgba(0,0,0,0.6); margin:0;">
+            8-bit RISC Processor on FGPA
+        </h1>
+    </header>
+    
+
+    <style>
+
+        .skills-divider {
+            display: flex;
+            align-items: center;
+            margin: 4rem 0 2.5rem;
+        }
+
+        .skills-divider::before,
+        .skills-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #dcdcdc;
+        }
+
+        .skills-divider span {
+            margin: 0 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .skills-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .skills-column {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .skills-column h4 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .skills-column ul {
+            padding-left: 1.2rem;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+<div id="main">
+
+<div style="text-align:center; margin-bottom:2rem;">
+    <a href="Projects.html" class="button">
+    ← Return to Main Portfolio</a>
+</div>
+
+<section class="post">
+
+    <h3 style="margin-bottom:0.5rem; color:#0b1d3a;">
+    Planning
+</h3>
+<p>
+
+<p>
+
+    This sophisticated project entitled "8-bit RISC Processor" was adapted into a calculator on an FPGA board, namely the 
+    Nexys A7-100T board. The focus of this project was to simulate a RISC processor through various modules,
+    and validate its functionality through basic computations (ie., addition, subtraction, multiplication, and division).
+    The block diagram sketched below represents the architecture of our implementation.
+    
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:2rem;">
+    <img src="images/block_diagram_RISC.jpg"
+         alt="NCAS Team"
+         style="width:650px; height:auto;" />
+
+    
+</div>
+
+</p>
+
+<h3 style="margin-top:2rem; margin-bottom:0.5rem; color:#0b1d3a;">
+    Design Process & Implementation
+</h3>
+<p>
+
+<p>
+
+    My primary role in this project was designing the logic for arithmetic operations, creating a functional display using
+    TDM (time-division multiplexing), and authoring the official report and presentation. The implementation for addition and
+    subtraction was designed using a Ripple Carry Adder and Subtractor, which conveniently holds a flag for overflow and can 
+    alternate between addition and subtraction via the select line. The 8-bit Array Multiplier, co-designed by my partner
+    Matt and I, uses a partial product tree and an extended full adder tree. A couple images of our design process can be
+    observed below because we had to understand connections between seperate logical structures, like adders and multiplexers
+    to get sensible results on Vivado: 
+
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:2rem;">
+    <img src="images/array_mult_1.jpg"
+         alt="NCAS Team"
+         style="width:350px; height:auto;" />
+
+    <img src="images/array_mult_2.jpg"
+         alt="NCAS Slides"
+         style="width:350px; height:auto;" />
+</div>
+ 
+    <br />
+
+    TDM is an avenue we explored in order to access several 7-segment displays simultaneously on the trainer board. In principle,
+    we can utilize multiple displays provided that an ideal refresh rate is used. If we can utilize this feature at a rate such 
+    the human eye cannot percieve the distinct changes that occur on the displays, then we output multiple signals (numbers)
+    simultanteously. Evidently, this is a necessary feature to create a functional display so that we can compute, observe, 
+    and validate the computations therein on our platform.
+    
+    <br /><br />
+
+    <figure style="text-align:center;">
+
+    <img src="images/TDM_PRINCIPLE.png"
+         alt="Time Division Multiplexing Principle"
+         style="width:700px; max-width:100%; height:auto;" />
+
+    <figcaption>
+        <strong>Figure 1.</strong> Time Division Multiplexing (TDM) principle illustrating how multiple signals share a single communication channel.
+    </figcaption>
+
+    
+    <img src="images/TDM_WAVEFORM.png"
+         alt="Time Division Multiplexing Principle"
+         style="width:700px; max-width:100%; height:auto;" />
+
+    <figcaption>
+        <strong>Figure 2.</strong> This testbench verifies the proper 
+    </figcaption>
+    
+    
+
+    
+    
+
+    
+
+    
+
+</p>
+
+</p>
+
+<h3 style="margin-top:2rem; margin-bottom:0.5rem; color:#0b1d3a; ">
+    Documentation
+</h3>
+<p>
+
+<p>
+
+    As the primary author I was also responsible for the project's 
+    <a href="documents/CECS 361 - Final Project Report (V1).pdf" target="_blank">technical documentation</a>, 
+    covering system architecture, module-level design, implementation details, and hardware verification for 
+    our FPGA-based 8-bit RISC processor. In particular, the report Diego and I authored documents design 
+    decisions, testing methodology, simulation results, and lessons learned. Moreoever, the original powerpoint 
+    presentation tied this project can be found 
+    <a href="https://docs.google.com/presentation/d/1ZXloqhWpb-dMwOswDvbxhppODqaf2BFxhtYj6SZxuFw/edit?usp=sharing" target="_blank">here</a>
+    , which expounds on our report concisely.
+
+ 
+    <div style="text-align:center;">
+        <iframe
+            width="300"
+            height="411"
+            src="https://www.youtube.com/embed/tNteecY3ncs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</p>
+
+
+<!-- Skills Section -->
+
+<div class="skills-divider">
+    <span>FPGA Project Skills Development</span>
+</div>
+
+<div class="skills-columns">
+
+    <div class="skills-column">
+
+        <h4>Hard Skills</h4>
+
+        <ul>
+            <li>Engineering Design Process</li>
+            <li>Technical Research</li>
+            <li>Design Trade-off Analysis</li>
+            <li>Systems Engineering Fundamentals</li>
+        </ul>
+
+    </div>
+
+    <div class="skills-column">
+
+        <h4>Soft Skills</h4>
+
+        <ul>
+            <li>Team Collaboration</li>
+            <li>Leadership</li>
+            <li>Communication</li>
+            <li>Time Management</li>
+        </ul>
+
+    </div>
+
+    <div class="skills-column">
+
+        <h4>Software &amp; Tools</h4>
+
+        <ul>
+            <li>Microsoft Word & PowerPoint</li>
+            <li>GitHub</li>
+            <li>Vivado</li>
+            <li>Verilog</li>
+            <li>Nexys A7 FPGA Board</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+</body>
+</html>
