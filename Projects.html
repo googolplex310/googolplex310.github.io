@@ -4,6 +4,16 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
+<style>
+
+    .secret {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+	}
+
+</style>
+
 <html>
 	<head>
 		<title>Jonathan Lopez's Portfolio</title>
@@ -12,6 +22,36 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+
+	<script>
+		let statusClosed = false;
+
+		function closeStatus() {
+			const status = document.getElementById("site-status");
+			status.classList.remove("visible");
+			statusClosed = true;
+		}
+
+		window.addEventListener("scroll", function () {
+			const status = document.getElementById("site-status");
+
+			if (window.scrollY < 300 && !statusClosed) {
+				status.classList.add("visible");
+			} else {
+				status.classList.remove("visible");
+			}
+		});
+
+		window.addEventListener("load", function () {
+			const status = document.getElementById("site-status");
+
+			if (window.scrollY < 300) {
+				status.classList.add("visible");
+			}
+		});
+	</script>
+
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -19,14 +59,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="Main_Page.html" class=""></a>
+						<a href="index.html" class=""></a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
 							<li class="active"><a href="Projects.html">Projects</a></li>
-							<li><a href="Main_Page.html">My Story</a></li>
+							<li><a href="index.html">My Story</a></li>
 							<li><a href="Professional_Experience.html">Professional Experience</a></li>
 						</ul>
 						<ul class="icons">
@@ -39,6 +79,17 @@
 
 				<!-- Main -->
 					<div id="main">
+
+						<div id="site-status" class="site-status">
+							<button class="status-close" onclick="closeStatus()">×</button>
+
+							<span class="status-icon">🛠️</span>
+
+							<div>
+								<strong>Still tinkering...</strong>
+								<p>This website is a work in progress and is currently being updated. Some links may not work!</p>
+							</div>
+						</div>
 
 						<!-- Featured Post -->
 							<article class="post featured">
@@ -58,6 +109,20 @@
 							<section class="posts">
 								<article>
 									<header>
+										<span class="date">December 6, 2025</span>
+										<h2><a href="#">CSULB BLT Club:<br />
+										Avionics Technician Assistant</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/CSULB_BLT_LOGO.png" 
+										alt="" 
+										style="width:225px; height:auto; margin:0 auto; display:block;" /></a>
+									<p>During my stint with the Beach Launch Team club while in my undergrad at CSULB, I contributed with CDIC testing, prototyping, and hardware design as an assistant to the avionics lead. </p>
+									<ul class="actions special">
+										<li><a href="#" class="button">View Details</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
 										<span class="date">August 24, 2024</span>
 										<h2><a href="CRABZERVER.html">CrabZerver<br />
 										Module</a></h2>
@@ -72,38 +137,30 @@
 								</article>
 								<article>
 									<header>
-										<span class="date">April 22, 2017</span>
-										<h2><a href="#">Primis eget<br />
-										imperdiet lorem</a></h2>
+										<span class="date">October 20, 2024</span>
+										<h2><a href="#">Embedded Systems:<br />
+										Weather Forecast</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<a href="#" class="image fit"><img src="images/WEATHER_FORECAST_SAMPLE.png" 
+										alt="" 
+										style="width:200px; height:auto; margin:0 auto; display:block;" /></a>
+									<p>Here, we have a collaborative project involving bare-metal programming on the TM4C123 microcontroller augmented with hardware upgrades to indicate the weather forecast. </p>
 									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
+										<li><a href="#" class="button">View Project</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-										<span class="date">April 18, 2017</span>
-										<h2><a href="#">Ante mattis<br />
-										interdum dolor</a></h2>
+										<span class="date">April 26, 2024</span>
+										<h2><a href="#">Embedded Systems:<br />
+										Space Invaders</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<a href="#" class="image fit"><img src="images/SPACE_INVADERS_LOGO.png" 
+										alt="" 
+										style="width:300px; height:auto; margin:0 auto; display:block;" /></a>
+									<p>This group project features the classic arcade game, <i>Space Invaders</i>, emphasizing bare-metal programming and hardware integration on a miniature platform.</p>
 									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 14, 2017</span>
-										<h2><a href="#">Tempus sed<br />
-										nulla imperdiet</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
+										<li><a href="#" class="button">View Project</a></li>
 									</ul>
 								</article>
 								<article>
@@ -123,10 +180,10 @@
 										<span class="date">October 7, 2021</span>
 										<h2><a href="NCAS_EXPERIENCE.html">NCAS Experience<br /></h2>
 									</header>
-                                    	<div style="text-align:center;"><a href="NCAS_EXPERIENCE.html"><img src="images/NCAS_LOGO.jpg" alt="" style="width:350px; height:auto;" /></a></div>									
+                                    	<div style="text-align:center;"><a href="NCAS_EXPERIENCE.html"><img src="images/NCAS_LOGO.jpg" alt="" style="width:300px; height:auto;" /></a></div>									
 										<p>This NASA-sponsored enrichment program featured individual and collaborative challenges through online research on the Artemis missions and a gamified simulation of a spaceflight operation.</p>
 									<ul class="actions special">
-										<li><a href="NCAS_EXPERIENCE.html" class="button">View Project</a></li>
+										<li><a href="NCAS_EXPERIENCE.html" class="button">View Details</a></li>
 									</ul>
 								</article>
 							</section>
@@ -174,24 +231,24 @@
 						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
+								<span class="secret"> 1234 Somewhere Road #87257<br />
+								Compton, CA 90220-3906</span>
 							</section>
 							<section>
 								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
+								<span class="secret">(000) 000-0000</span>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
+								<p><a href="#">jonathan.lopez310@gmail.com</a></p>
 							</section>
 							<section>
 								<h3>Social</h3>
 								<ul class="icons alt">
 									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.instagram.com/johnniee310/" target="_blank" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/googolplex310" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</section>
 						</section>
