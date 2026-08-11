@@ -19,6 +19,13 @@
 
     <style>
 
+        .skills-column ul {
+        text-align: left;
+        list-style-position: outside;
+        padding-left: 1.5em;
+        margin: 0;
+        }
+
         .skills-divider {
             display: flex;
             align-items: center;
@@ -81,7 +88,6 @@
     <h3 style="margin-bottom:0.5rem; color:#0b1d3a;">
     Planning
 </h3>
-<p>
 
 <p>
 
@@ -103,14 +109,35 @@
 <h3 style="margin-top:2rem; margin-bottom:0.5rem; color:#0b1d3a;">
     Design Process & Implementation
 </h3>
-<p>
 
 <p>
 
     My primary role in this project was designing the logic for arithmetic operations, creating a functional display using
     TDM (time-division multiplexing), and authoring the official report and presentation. The implementation for addition and
     subtraction was designed using a Ripple Carry Adder and Subtractor, which conveniently holds a flag for overflow and can 
-    alternate between addition and subtraction via the select line. The 8-bit Array Multiplier, co-designed by my partner
+    alternate between addition and subtraction via the select line that we implemented in our module. 
+    
+
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:2rem;">
+    <img src="images/RIPPLE_CARRY_ADDER_SUB.png"
+         alt="Time Division Multiplexing Principle"
+         style="width:700px; max-width:100%; height:auto;" />
+    </div>
+
+    <figure style="text-align:center;">
+
+    <figcaption style="font-size:0.9em;">
+    <strong>Figure 1.</strong> This model represents the 8-bit Ripple Carry Adder and Subtractor. Notably, it can alternate
+    between addition and subtraction by XOR-ing inputs based on the desired mode.
+    </figure>
+    
+    </figcaption>
+    
+</p>
+
+<p>
+    
+    The 8-bit Array Multiplier, co-designed by my partner
     Matt and I, uses a partial product tree and an extended full adder tree. A couple images of our design process can be
     observed below because we had to understand connections between seperate logical structures, like adders and multiplexers
     to get sensible results on Vivado: 
@@ -141,49 +168,106 @@
          alt="Time Division Multiplexing Principle"
          style="width:700px; max-width:100%; height:auto;" />
 
-    <figcaption>
-        <strong>Figure 1.</strong> Time Division Multiplexing (TDM) principle illustrating how multiple signals share a single communication channel.
+    <br />
+
+    <figcaption style="font-size:0.9em;">
+    <strong>Figure 2.</strong> Time Division-Multiplexing (TDM) principle illustrating how multiple signals 
+    share a single communication channel.
     </figcaption>
 
-    
+    <br />
+
     <img src="images/TDM_WAVEFORM.png"
-         alt="Time Division Multiplexing Principle"
-         style="width:700px; max-width:100%; height:auto;" />
+     alt="Time Division Multiplexing Principle"
+     style="width:700px; max-width:100%; height:auto;" />
 
-    <figcaption>
-        <strong>Figure 2.</strong> This testbench verifies the proper 
+    <br />
+
+    <figcaption style="font-size:0.9em;">
+    <strong>Figure 3.</strong> This testbench verifies an output we wish to display at the software level:
+    we want to capture specific signals for certain integer values for a certain amount of time on the 7-segment BCD displays.
+    
+    <br />
     </figcaption>
-    
-    
 
-    
-    
+</p>
 
-    
+<h3 style="display:flex; justify-content:left; "margin-top:2rem; margin-bottom:0.5rem; color:#0b1d3a;">
+    Verification
+</h3>
 
-    
+<p>
 
+    Once we were relatively confident with the design of our digital circuits we needed to be completely certain 
+    that every test case possible would invariably be correct. The primary verification strategy used in 
+    this project were exhaustive self-checking testbenchs for every digital block we developed in Vivado. Judiciously, this
+    methodology proved useful in ascertaining specific test cases where our divider block fell short in correctly computing
+    specific test cases. On the other hand, it verified that our Ripple Carry Adder/Subtractor and Array Multiplier were
+    logically sound. 
+
+    <br />
+
+    <figure style="text-align:center;">
+    
+    <img src="images/EXHAUSTIVE_SELF_CHECK_WAVE_DIV.png"
+         alt="Time Division Multiplexing Principle"
+         style="width:600px; max-width:100%; height:auto;" />
+
+    <br />
+
+    <figcaption style="font-size:0.9em;">
+    <strong>Figure 4.</strong> Waveform highlighting lapses in computing divison using 4-bit divisor block.
+    </figcaption>
+
+    <br />
+
+    <img src="images/EXHAUSTIVE_SELF_CHECK_CONSOLE_DIV.png"
+     alt="Time Division Multiplexing Principle"
+     style="width:450px; max-width:100%; height:auto;" />
+
+    <br />
+
+    <figcaption style="font-size:0.9em;">
+    <strong>Figure 5.</strong> Exhaustive self-checking testbench console of 4-bit divider supplementing waveform analysis.
+    
 </p>
 
 </p>
 
-<h3 style="margin-top:2rem; margin-bottom:0.5rem; color:#0b1d3a; ">
+<h3 style="text-align: left; margin-top:2rem; margin-bottom:0.5rem; color:#0b1d3a;">
     Documentation
 </h3>
-<p>
+
 
 <p>
 
     As the primary author I was also responsible for the project's 
     <a href="documents/CECS 361 - Final Project Report (V1).pdf" target="_blank">technical documentation</a>, 
-    covering system architecture, module-level design, implementation details, and hardware verification for 
+    covering system architecture, module-level design, implementation details<sup>†</sup>, and hardware verification for 
     our FPGA-based 8-bit RISC processor. In particular, the report Diego and I authored documents design 
     decisions, testing methodology, simulation results, and lessons learned. Moreoever, the original powerpoint 
     presentation tied this project can be found 
     <a href="https://docs.google.com/presentation/d/1ZXloqhWpb-dMwOswDvbxhppODqaf2BFxhtYj6SZxuFw/edit?usp=sharing" target="_blank">here</a>
-    , which expounds on our report concisely.
+    , which expounds on our report concisely. The video demonstration below briefly covers the functionality of
+    our latest implementation on the A7 trainer board.
 
- 
+    <br /><br /><br />
+
+    <img src="images/TOP_MODULE_SCREENSHOT.png"
+     alt="Time Division Multiplexing Principle"
+     style="display:block; margin:0 auto; width:900px; max-width:100%; height:auto;" />
+
+
+    <figcaption style="font-size:0.9em;">
+    <strong>Figure 6.</strong> Top module illustrating digital design of 8-bit RISC processor.
+    </figcaption>
+
+    <br /><br />
+
+    <h3 style="text-align: center; margin-top:2rem; margin-bottom:0.5rem; color:#03060a;">
+    Video Demonstration
+    </h3>
+
     <div style="text-align:center;">
         <iframe
             width="300"
@@ -199,6 +283,22 @@
 </p>
 
 
+<p>
+
+  <br />
+
+  <i><sup>†</sup>For specific references on code-level work please refer to my GitHub:</i>
+
+</p>
+
+<a href="https://github.com/googolplex310/Vivado-Projects/tree/main/8bit_RISC_Processor"
+    class="icon brands fa-github fa-3x"
+    target="_blank"
+    rel="noopener noreferrer">
+    <span class="label">GitHub</span>
+</a>
+
+
 <!-- Skills Section -->
 
 <div class="skills-divider">
@@ -212,10 +312,10 @@
         <h4>Hard Skills</h4>
 
         <ul>
-            <li>Engineering Design Process</li>
-            <li>Technical Research</li>
-            <li>Design Trade-off Analysis</li>
-            <li>Systems Engineering Fundamentals</li>
+            <li>Verilog HDL Development</li>
+            <li>FPGA Design & Implementation</li>
+            <li>Hardware Verification & Testbench Development</li>
+            <li>Digital Logic Design</li>
         </ul>
 
     </div>
@@ -226,9 +326,9 @@
 
         <ul>
             <li>Team Collaboration</li>
-            <li>Leadership</li>
-            <li>Communication</li>
-            <li>Time Management</li>
+            <li>Critical Thinking</li>
+            <li>Technical Communication</li>
+            <li>Attention to Detail</li>
         </ul>
 
     </div>
@@ -240,9 +340,9 @@
         <ul>
             <li>Microsoft Word & PowerPoint</li>
             <li>GitHub</li>
-            <li>Vivado</li>
-            <li>Verilog</li>
-            <li>Nexys A7 FPGA Board</li>
+            <li>Xilinx Vivado & Verilog HDL</li>
+            <li>7-segment Display & FPGA I/O Interfaces</li>
+            <li>Nexys A7-100T FPGA Board</li>
         </ul>
 
     </div>

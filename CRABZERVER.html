@@ -8,12 +8,11 @@
     <!-- Massively CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
 
-    <header class="major" style="text-align:center; padding:4rem 2rem; background:#0b1d3a;">
+    <header class="major" style="text-align:center; padding:4rem 2rem; background:#460663;">
         <h1 style="color:white; text-shadow:0 2px 6px rgba(0,0,0,0.6); margin:0;">
             'CrabZerver' Module
         </h1>
     </header>
-    
 
     <style>
 
@@ -65,54 +64,78 @@
 
 </head>
 
+<script>
+    window.addEventListener("load", function () {
+        const tip = document.getElementById("site-tip");
+
+        setTimeout(function () {
+            tip.classList.add("visible");
+        }, 1000);
+    });
+
+    function closeTip() {
+        const tip = document.getElementById("site-tip");
+        tip.classList.remove("visible");
+    }
+</script>
+
 <body>
 
-
-    
 <div id="main">
+
+<div id="site-tip" class="site-tip">
+    <button class="tip-close" onclick="closeTip()">×</button>
+
+    <span class="tip-icon">🚧</span>
+
+    <div class="tip-content">
+        <strong>Under Construction!</strong>
+        <p>Pardon the dust — I'm still working on things around here.</p>
+    </div>
+</div>
+
+<div style="text-align:center; margin-bottom:2rem;">
+    <a href="Projects.html" class="button">
+    ← Return to Main Portfolio</a>
+</div>
 
 <section class="post">
 
     <h3 style="margin-bottom:0.5rem; color:#0b1d3a;">
-    Phase I: Concept Study & Research Foundations
+    Background
 </h3>
 <p>
 
 <p>
     <span class="image left">
-        <img src="images/HABITATION.jpg" alt="" />
+        <img src="images/CRAB_POT_W_PERSON.jpg" 
+        alt="" 
+        style="width:250px; height:auto;" />
     </span>
 
-    My <a href="https://www.jpl.nasa.gov/edu/internships/apply/nasa-community-college-aerospace-scholars/" target="_blank">NCAS experience</a>
-    was composed of two phases: the first involved a concept study
-    of our choosing from a selection of relevant topics, and the second involved networking with special guest speakers
-    and collaboration with national participants in the NCAS program. My initial NCAS experience
-    was rewarding because it whet my palate on the flavor of research performed by product development teams. In particular,
-    the concept study I wrote touched on habitation methodologies to consider that are arguably crucial for long-term
-    mission success on the NASA-led Artemis program. Throughout this process, we had mentors and educators review our
-    drafts to scrutinize and lend advice on our research. One variation of a draft and depth of research can be
-    reviewed <a href="https://docs.google.com/document/d/1SDDCWgFas7NwRYNGCUnWW8GP8B61CZKmjUZzupSWyXo/edit?usp=sharing" target="_blank">here<sup>†</sup></a>.
-    Ultimately, based on the quality of our work, participants were determined as potential candidates
-    for the sequel to the NCAS experience—an opportunity which I had fortunately managed to secure.
+    This collaborative senior design project was developed to address a practical problem faced by recreational crab fishermen. 
+    During the project's planning phase, our team explored several ideas before identifying an opportunity to create a solution 
+    that could provide meaningful value to a specific community. Through discussions with a recreational fisherman and research 
+    into traditional crabbing practices, we learned that checking crab pots is often repetitive, physically demanding, and 
+    inefficient, requiring fishermen to retrieve pots at arbitrary intervals without knowing whether they contain crabs.
+
+    These insights inspired the development of the <i>CrabZerver</i>—a smart monitoring system designed to improve the crabbing 
+    experience. By combining underwater imaging with automated monitoring and user notifications, the system allows fishermen 
+    to observe activity around their crab pots and receive alerts when it is likely that crabs have been captured. 
+    Rather than repeatedly checking empty pots, users can make more informed decisions about when to retrieve them, reducing 
+    unnecessary effort while providing greater visibility into underwater conditions.
 
 </p>
 
 <h3 style="margin-top:2rem; margin-bottom:0.5rem; color:#0b1d3a;">
-    Phase II: Collaboration & Mission Simulation
+    Roles & Responsibilities
 </h3>
 <p>
 
 <p>
 
-    The sequel to my NCAS experience certainly felt like a step-up to my initial research in Part I at NCAS.
-    In this stage, special guest speakers were featured to discuss their profession, research, and background.
-    The guest speakers not only provided valuable insight into their work but they also offered a critical networking
-    opportunity for prospective engineers like myself. Throughout the scope of Phase II at NCAS, we also conducted
-    a "gamified" mission of a spaceflight operation that simulated the Artemis program in teams. From my recollection,
-    one takeaway was the difficulty following deadlines while simultaneously remaining within the budget allotted to
-    my team. Nevertheless, we made some technological sacrifices but remained within budget and witnessed a successful
-    mission within the given constraints.
-
+    
+    
 </p>
 
 <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:2rem;">
